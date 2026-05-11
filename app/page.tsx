@@ -1,7 +1,28 @@
+import Image from "next/image";
 import UrgencyBar from "./components/UrgencyBar";
 import LeadForm from "./components/LeadForm";
 import FAQ from "./components/FAQ";
 import WhatsAppButton from "./components/WhatsAppButton";
+
+const LOGO_URL =
+  "https://ecomsolutions.es/wp-content/uploads/cropped-favicon-270x270.png";
+
+const checkIcon = (
+  <svg
+    className="w-4 h-4 text-[#22C55E] flex-shrink-0"
+    fill="currentColor"
+    viewBox="0 0 20 20"
+  >
+    <path
+      fillRule="evenodd"
+      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+      clipRule="evenodd"
+    />
+  </svg>
+);
+
+const starPath =
+  "M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z";
 
 export default function Page() {
   return (
@@ -13,9 +34,13 @@ export default function Page() {
       <nav className="bg-[#0A0A09] border-b border-white/5 py-3 px-4">
         <div className="max-w-5xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-2.5">
-            <div className="w-8 h-8 bg-[#22C55E] rounded-lg flex items-center justify-center font-bold text-black text-xs">
-              ES
-            </div>
+            <Image
+              src={LOGO_URL}
+              width={40}
+              height={40}
+              alt="Ecom Solutions"
+              className="rounded-lg"
+            />
             <span className="text-white font-semibold text-sm">
               Ecom Solutions
             </span>
@@ -42,7 +67,7 @@ export default function Page() {
             </a>
             <a
               href="#formulario"
-              className="bg-[#22C55E] hover:bg-[#16a34a] text-white text-sm font-semibold px-4 py-2 rounded-lg transition-colors"
+              className="bg-[#1E40AF] hover:bg-[#1e3a8a] text-white text-sm font-semibold px-4 py-2 rounded-lg transition-colors"
             >
               Empezar gratis
             </a>
@@ -77,20 +102,18 @@ export default function Page() {
 
           {/* Subtítulo */}
           <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed">
-            Solo pagas notaría y registro{" "}
-            <strong className="text-white">~350€</strong>. Nosotros ponemos
-            todo lo demás: honorarios, trámites y{" "}
-            <strong className="text-white">
-              2 meses de gestoría incluidos
-            </strong>
-            .
+            Solo pagas{" "}
+            <strong className="text-white">300€ + IVA</strong>{" "}
+            (notaría, Registro Mercantil y CIF incluidos). Nosotros ponemos los
+            honorarios y{" "}
+            <strong className="text-white">2 meses de gestoría gratis</strong>.
           </p>
 
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
             <a
               href="#formulario"
-              className="bg-[#22C55E] hover:bg-[#16a34a] text-white px-8 py-4 rounded-xl text-lg font-bold transition-colors shadow-lg shadow-green-900/30"
+              className="bg-[#1E40AF] hover:bg-[#1e3a8a] text-white px-8 py-4 rounded-xl text-lg font-bold transition-colors shadow-lg shadow-blue-900/30"
             >
               Quiero mi SL gratis →
             </a>
@@ -107,44 +130,20 @@ export default function Page() {
           {/* Badge de confianza */}
           <p className="text-gray-400 text-sm flex items-center justify-center gap-4 flex-wrap">
             <span className="flex items-center gap-1.5">
-              <svg
-                className="w-4 h-4 text-[#22C55E]"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clipRule="evenodd"
-                />
+              <svg className="w-4 h-4 text-[#22C55E]" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
               </svg>
               Sin permanencia
             </span>
             <span className="flex items-center gap-1.5">
-              <svg
-                className="w-4 h-4 text-[#22C55E]"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clipRule="evenodd"
-                />
+              <svg className="w-4 h-4 text-[#22C55E]" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
               </svg>
               Sin letra pequeña
             </span>
             <span className="flex items-center gap-1.5">
-              <svg
-                className="w-4 h-4 text-[#22C55E]"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clipRule="evenodd"
-                />
+              <svg className="w-4 h-4 text-[#22C55E]" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
               </svg>
               Respuesta en 24h
             </span>
@@ -159,9 +158,9 @@ export default function Page() {
         {/* Stats row */}
         <div className="max-w-3xl mx-auto mt-20 grid grid-cols-3 gap-4 border-t border-white/10 pt-10">
           {[
-            { number: "+50", label: "clientes satisfechos" },
+            { number: "+200", label: "clientes satisfechos" },
             { number: "0€", label: "honorarios de constitución" },
-            { number: "7-10", label: "días hasta tu SL lista" },
+            { number: "5-7", label: "días hábiles hasta tu SL" },
           ].map((stat) => (
             <div key={stat.label} className="text-center">
               <p className="text-3xl font-extrabold text-[#22C55E]">
@@ -235,8 +234,65 @@ export default function Page() {
         </div>
       </section>
 
-      {/* 5. COMPARATIVA DE PRECIO */}
-      <section id="comparativa" className="bg-[#0F0F0E] py-20 px-4">
+      {/* 5. ¿PARA QUIÉN ES ESTE SERVICIO? */}
+      <section className="bg-[#0F0F0E] py-20 px-4">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-14">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              ¿Para quién es este servicio?
+            </h2>
+            <p className="text-gray-400 max-w-xl mx-auto">
+              Si encajas en alguno de estos perfiles, la constitución gratuita
+              es para ti.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                icon: "🚀",
+                title: "El emprendedor que quiere facturar",
+                desc: "Tienes un proyecto en marcha o una idea clara y necesitas una empresa para emitir facturas y trabajar con clientes.",
+              },
+              {
+                icon: "📈",
+                title: "El autónomo que quiere pagar menos",
+                desc: "Ya eres autónomo pero tu facturación crece y sabes que una SL te permite tributar menos por el Impuesto de Sociedades.",
+              },
+              {
+                icon: "🤝",
+                title: "El socio que monta empresa con otro",
+                desc: "Vas a emprender con un socio y necesitáis una estructura legal que proteja a ambos y reparta responsabilidades.",
+              },
+            ].map((profile) => (
+              <div
+                key={profile.title}
+                className="bg-[#1A1A18] border border-white/10 rounded-2xl p-8 text-center hover:border-[#22C55E]/30 transition-colors"
+              >
+                <div className="text-5xl mb-5">{profile.icon}</div>
+                <h3 className="text-lg font-bold text-white mb-3">
+                  {profile.title}
+                </h3>
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  {profile.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-10 text-center">
+            <a
+              href="#formulario"
+              className="inline-block bg-[#1E40AF] hover:bg-[#1e3a8a] text-white font-bold px-8 py-4 rounded-xl text-lg transition-colors"
+            >
+              Sí, quiero mi SL gratis →
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* 6. COMPARATIVA DE PRECIO */}
+      <section id="comparativa" className="bg-[#0A0A09] py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-14">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
@@ -260,22 +316,10 @@ export default function Page() {
               </div>
               <div className="space-y-4">
                 {[
-                  { label: "Constitución", value: "800€ – 1.500€", cross: true },
-                  {
-                    label: "Gestoría mensual",
-                    value: "desde 80€/mes",
-                    cross: true,
-                  },
-                  {
-                    label: "Permanencia",
-                    value: "12 meses mínimo",
-                    cross: true,
-                  },
-                  {
-                    label: "Total 1er año",
-                    value: "~1.760€ – 2.460€",
-                    total: true,
-                  },
+                  { label: "Constitución + honorarios", value: "800€ – 1.500€", cross: true },
+                  { label: "Gestoría mensual", value: "desde 80€/mes", cross: true },
+                  { label: "Permanencia", value: "12 meses mínimo", cross: true },
+                  { label: "Total 1er año", value: "~1.760€ – 2.460€", total: true },
                 ].map((row) => (
                   <div
                     key={row.label}
@@ -311,18 +355,20 @@ export default function Page() {
               </div>
               <div className="space-y-4">
                 {[
-                  { label: "Constitución", value: "0€ GRATIS", green: true },
                   {
-                    label: "2 meses gestoría",
-                    value: "GRATIS",
-                    green: true,
+                    label: "Notaría + registro",
+                    value: "300€ + IVA",
+                    sub: "(nuestros honorarios: 0€)",
+                    green: false,
                   },
-                  { label: "Permanencia", value: "Sin compromiso" },
+                  { label: "2 meses gestoría", value: "GRATIS", green: true },
+                  { label: "Permanencia", value: "Sin compromiso", green: false },
                   {
                     label: "Total 1er año",
-                    value: "~950€",
+                    value: "~960€",
                     sub: "(notaría + gestoría mes 3-12)",
                     total: true,
+                    green: false,
                   },
                 ].map((row) => (
                   <div
@@ -331,14 +377,15 @@ export default function Page() {
                   >
                     <div>
                       <span className="text-gray-300 text-sm">{row.label}</span>
-                      {"sub" in row && row.sub && (
+                      {row.sub && (
                         <p className="text-gray-500 text-xs mt-0.5">{row.sub}</p>
                       )}
                     </div>
                     <span
-                      className={`font-bold text-sm ${"total" in row && row.total
+                      className={`font-bold text-sm ${
+                        row.total
                           ? "text-[#22C55E] text-base"
-                          : "green" in row && row.green
+                          : row.green
                           ? "text-[#22C55E]"
                           : "text-gray-200"
                       }`}
@@ -355,20 +402,20 @@ export default function Page() {
             <p className="text-[#22C55E] font-semibold text-lg">
               Ahorro estimado en el primer año:{" "}
               <span className="text-white font-extrabold text-2xl">
-                +1.000€
+                hasta 1.500€
               </span>
             </p>
             <a
               href="#formulario"
-              className="inline-block bg-[#22C55E] hover:bg-[#16a34a] text-white font-bold px-8 py-4 rounded-xl text-lg transition-colors"
+              className="inline-block bg-[#1E40AF] hover:bg-[#1e3a8a] text-white font-bold px-8 py-4 rounded-xl text-lg transition-colors"
             >
-              Quiero ahorrarme esos 1.000€ →
+              Quiero ahorrarme hasta 1.500€ →
             </a>
           </div>
         </div>
       </section>
 
-      {/* 6. PROCESO EN 4 PASOS */}
+      {/* 7. PROCESO EN 4 PASOS */}
       <section id="proceso" className="bg-gray-50 py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-14">
@@ -408,7 +455,7 @@ export default function Page() {
                   num: "4",
                   title: "Empresa lista",
                   desc: "NIF definitivo, alta en Hacienda y cuenta bancaria. Tu SL operativa.",
-                  time: "7-10 días",
+                  time: "5-7 días hábiles",
                 },
               ].map((step) => (
                 <div key={step.num} className="text-center relative">
@@ -430,7 +477,7 @@ export default function Page() {
           <div className="mt-12 text-center">
             <a
               href="#formulario"
-              className="inline-block bg-[#22C55E] hover:bg-[#16a34a] text-white font-bold px-8 py-4 rounded-xl text-lg transition-colors"
+              className="inline-block bg-[#1E40AF] hover:bg-[#1e3a8a] text-white font-bold px-8 py-4 rounded-xl text-lg transition-colors"
             >
               Empezar ahora →
             </a>
@@ -438,7 +485,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* 7. TESTIMONIOS */}
+      {/* 8. TESTIMONIOS */}
       <section id="testimonios" className="bg-[#0F0F0E] py-20 px-4">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-14">
@@ -447,13 +494,8 @@ export default function Page() {
             </h2>
             <div className="flex justify-center items-center gap-1">
               {[...Array(5)].map((_, i) => (
-                <svg
-                  key={i}
-                  className="w-5 h-5 text-yellow-400"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                <svg key={i} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path d={starPath} />
                 </svg>
               ))}
               <span className="text-gray-400 text-sm ml-2">5/5 en Google</span>
@@ -496,13 +538,8 @@ export default function Page() {
               >
                 <div className="flex gap-1 mb-4">
                   {[...Array(5)].map((_, i) => (
-                    <svg
-                      key={i}
-                      className="w-4 h-4 text-yellow-400"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    <svg key={i} className="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path d={starPath} />
                     </svg>
                   ))}
                 </div>
@@ -525,13 +562,8 @@ export default function Page() {
                 <div className="mt-3 flex items-center gap-1.5 border-t border-white/5 pt-3">
                   <div className="flex gap-0.5">
                     {[...Array(5)].map((_, i) => (
-                      <svg
-                        key={i}
-                        className="w-3 h-3 text-yellow-400"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                      >
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      <svg key={i} className="w-3 h-3 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                        <path d={starPath} />
                       </svg>
                     ))}
                   </div>
@@ -545,10 +577,10 @@ export default function Page() {
         </div>
       </section>
 
-      {/* 8. FAQ */}
+      {/* 9. FAQ */}
       <FAQ />
 
-      {/* 9. TABLA DE PRECIOS POST-CONSTITUCIÓN */}
+      {/* 10. TABLA DE PRECIOS POST-CONSTITUCIÓN */}
       <section id="precios" className="bg-gray-50 py-20 px-4">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
@@ -556,16 +588,17 @@ export default function Page() {
               ¿Cuánto cuesta la gestoría a partir del mes 3?
             </h2>
             <p className="text-gray-500">
-              Elige el plan que se adapta a tu situación.
+              Planes diseñados para Sociedades Limitadas. Sin permanencia.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6 items-start">
-            {/* Autónomo sin trabajadores */}
+            {/* SL Básica */}
             <div className="bg-white p-8 rounded-2xl border border-gray-200 shadow-sm">
-              <h3 className="text-lg font-bold text-gray-900 mb-2">
-                Autónomo sin trabajadores
+              <h3 className="text-lg font-bold text-gray-900 mb-1">
+                SL Básica
               </h3>
+              <p className="text-gray-500 text-xs mb-4">Para SL sin empleados</p>
               <div className="flex items-baseline gap-1 mb-6">
                 <span className="text-4xl font-extrabold text-gray-900">
                   60€
@@ -574,29 +607,28 @@ export default function Page() {
               </div>
               <ul className="space-y-3">
                 {[
-                  "IVA trimestral",
-                  "IRPF",
-                  "Renta anual",
+                  "IVA trimestral (mod. 303)",
+                  "Retenciones (mod. 111, 115)",
+                  "Pagos fraccionados (mod. 202)",
                   "Contabilidad mensual",
                 ].map((item) => (
-                  <li key={item} className="flex items-center gap-2 text-sm text-gray-600">
-                    <svg className="w-4 h-4 text-[#22C55E] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
+                  <li key={item} className="flex items-start gap-2 text-sm text-gray-600">
+                    {checkIcon}
                     {item}
                   </li>
                 ))}
               </ul>
             </div>
 
-            {/* Autónomo con trabajadores — MÁS CONTRATADO */}
+            {/* SL Completa — MÁS CONTRATADO */}
             <div className="bg-[#0D2818] border-2 border-[#22C55E] p-8 rounded-2xl relative">
               <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#22C55E] text-black text-xs font-bold px-4 py-1.5 rounded-full whitespace-nowrap">
                 Más contratado
               </div>
-              <h3 className="text-lg font-bold text-white mb-2">
-                Autónomo con trabajadores
+              <h3 className="text-lg font-bold text-white mb-1">
+                SL Completa
               </h3>
+              <p className="text-gray-400 text-xs mb-4">Incluye cierre fiscal anual</p>
               <div className="flex items-baseline gap-1 mb-6">
                 <span className="text-4xl font-extrabold text-white">90€</span>
                 <span className="text-gray-400 text-sm">/mes</span>
@@ -604,24 +636,24 @@ export default function Page() {
               <ul className="space-y-3">
                 {[
                   "Todo lo del plan anterior",
-                  "Nóminas",
-                  "Seguridad Social",
+                  "Impuesto de Sociedades (mod. 200)",
+                  "Cuentas anuales",
+                  "Legalización de libros",
                 ].map((item) => (
-                  <li key={item} className="flex items-center gap-2 text-sm text-gray-300">
-                    <svg className="w-4 h-4 text-[#22C55E] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
+                  <li key={item} className="flex items-start gap-2 text-sm text-gray-300">
+                    {checkIcon}
                     {item}
                   </li>
                 ))}
               </ul>
             </div>
 
-            {/* Sociedad Limitada */}
+            {/* SL + Laboral */}
             <div className="bg-white p-8 rounded-2xl border border-gray-200 shadow-sm">
-              <h3 className="text-lg font-bold text-gray-900 mb-2">
-                Sociedad Limitada
+              <h3 className="text-lg font-bold text-gray-900 mb-1">
+                SL + Laboral
               </h3>
+              <p className="text-gray-500 text-xs mb-4">Para SL con empleados</p>
               <div className="flex items-baseline gap-1 mb-6">
                 <span className="text-4xl font-extrabold text-gray-900">
                   120€
@@ -630,15 +662,13 @@ export default function Page() {
               </div>
               <ul className="space-y-3">
                 {[
-                  "Contabilidad completa",
-                  "IVA",
-                  "Impuesto de Sociedades",
+                  "Todo lo del plan anterior",
                   "Nóminas",
+                  "Seguridad Social",
+                  "Altas y bajas de empleados",
                 ].map((item) => (
-                  <li key={item} className="flex items-center gap-2 text-sm text-gray-600">
-                    <svg className="w-4 h-4 text-[#22C55E] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
+                  <li key={item} className="flex items-start gap-2 text-sm text-gray-600">
+                    {checkIcon}
                     {item}
                   </li>
                 ))}
@@ -652,14 +682,14 @@ export default function Page() {
         </div>
       </section>
 
-      {/* 10. GARANTÍAS */}
+      {/* 11. GARANTÍAS */}
       <section className="bg-[#0A0A09] py-12 px-4 border-t border-white/5">
         <div className="max-w-4xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
               { icon: "🔒", text: "Datos protegidos RGPD" },
               { icon: "✅", text: "Colaborador AEAT certificado" },
-              { icon: "⭐", text: "+50 clientes satisfechos" },
+              { icon: "⭐", text: "+200 clientes satisfechos" },
               { icon: "📞", text: "Respuesta garantizada en 24h" },
             ].map((badge) => (
               <div
@@ -676,7 +706,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* 11. FORMULARIO */}
+      {/* 12. FORMULARIO */}
       <section
         id="formulario"
         className="bg-[#0A0A09] py-20 px-4 border-t border-[#22C55E]/20"
@@ -715,7 +745,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* 12. FOOTER */}
+      {/* 13. FOOTER */}
       <footer className="bg-[#080807] border-t border-white/5 py-10 px-4">
         <div className="max-w-5xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6 mb-8">
@@ -727,16 +757,10 @@ export default function Page() {
             </div>
 
             <div className="flex flex-col sm:flex-row items-center gap-4 text-sm text-gray-400">
-              <a
-                href="tel:+34661959962"
-                className="hover:text-white transition-colors"
-              >
+              <a href="tel:+34661959962" className="hover:text-white transition-colors">
                 📞 +34 661 959 962
               </a>
-              <a
-                href="mailto:info@ecomsolutions.es"
-                className="hover:text-white transition-colors"
-              >
+              <a href="mailto:info@ecomsolutions.es" className="hover:text-white transition-colors">
                 ✉️ info@ecomsolutions.es
               </a>
               <a
@@ -757,10 +781,9 @@ export default function Page() {
             </p>
             <p className="mt-2 max-w-2xl mx-auto">
               La oferta de honorarios 0€ aplica a la constitución estándar de
-              una SL. Los gastos de notaría y Registro Mercantil (~300-400€)
-              corren a cargo del cliente y varían según la provincia. Los 2
-              meses de gestoría gratuita se aplican desde la constitución. Sin
-              permanencia a partir del mes 3.
+              una SL. Los gastos de notaría y Registro Mercantil (300€ + IVA)
+              corren a cargo del cliente. Los 2 meses de gestoría gratuita se
+              aplican desde la constitución. Sin permanencia a partir del mes 3.
             </p>
           </div>
         </div>

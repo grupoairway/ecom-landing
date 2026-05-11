@@ -9,7 +9,7 @@ const faqs = [
   },
   {
     q: "¿Cuánto tiempo tarda en estar lista mi empresa?",
-    a: "Entre 7 y 10 días hábiles desde que firmamos ante notario.",
+    a: "Entre 5 y 7 días hábiles desde la firma ante notario.",
   },
   {
     q: "¿Qué incluyen los 2 meses de gestoría gratis?",
@@ -25,7 +25,7 @@ const faqs = [
   },
   {
     q: "¿Cuánto cuesta exactamente la notaría y el registro?",
-    a: "Aproximadamente entre 300€ y 400€ en total, dependiendo de la provincia. Te damos el presupuesto exacto antes de comprometerte a nada.",
+    a: "El precio total es 300€ + IVA, que incluye notaría, Registro Mercantil y CIF. No hay costes ocultos ni sorpresas.",
   },
 ];
 
