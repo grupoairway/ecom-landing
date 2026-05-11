@@ -37,9 +37,10 @@ export default function Page() {
               height={40}
               alt="EcomSolutions"
               className="rounded-lg"
+              style={{ mixBlendMode: "screen" }}
             />
             <span className="text-white text-sm" style={{ fontWeight: 600 }}>
-              EcomSolutions
+              <span style={{ color: "#2563EB" }}>E</span>com<span style={{ color: "#2563EB" }}>S</span>olutions
             </span>
           </div>
           <div className="flex items-center gap-4">
@@ -83,9 +84,10 @@ export default function Page() {
               height={40}
               alt="EcomSolutions"
               className="rounded-lg"
+              style={{ mixBlendMode: "screen" }}
             />
             <span className="text-xl tracking-wide text-gray-100" style={{ fontWeight: 600 }}>
-              EcomSolutions
+              <span style={{ color: "#2563EB" }}>E</span>com<span style={{ color: "#2563EB" }}>S</span>olutions
             </span>
           </div>
 
@@ -737,7 +739,7 @@ export default function Page() {
                 alt="EcomSolutions"
                 className="rounded-lg"
               />
-              <span className="text-white" style={{ fontWeight: 600 }}>EcomSolutions</span>
+              <span className="text-white" style={{ fontWeight: 600 }}><span style={{ color: "#2563EB" }}>E</span>com<span style={{ color: "#2563EB" }}>S</span>olutions</span>
             </div>
 
             <div className="flex flex-col sm:flex-row items-center gap-4 text-sm text-gray-400">
