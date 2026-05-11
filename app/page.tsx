@@ -1,5 +1,7 @@
 import UrgencyBar from "./components/UrgencyBar";
 import LeadForm from "./components/LeadForm";
+import FAQ from "./components/FAQ";
+import WhatsAppButton from "./components/WhatsAppButton";
 
 export default function Page() {
   return (
@@ -7,7 +9,48 @@ export default function Page() {
       {/* 1. BARRA DE URGENCIA */}
       <UrgencyBar />
 
-      {/* 2. HERO */}
+      {/* 2. HEADER NAV */}
+      <nav className="bg-[#0A0A09] border-b border-white/5 py-3 px-4">
+        <div className="max-w-5xl mx-auto flex items-center justify-between">
+          <div className="flex items-center gap-2.5">
+            <div className="w-8 h-8 bg-[#22C55E] rounded-lg flex items-center justify-center font-bold text-black text-xs">
+              ES
+            </div>
+            <span className="text-white font-semibold text-sm">
+              Ecom Solutions
+            </span>
+          </div>
+          <div className="flex items-center gap-4">
+            <a
+              href="tel:+34661959962"
+              className="hidden md:flex items-center gap-2 text-gray-300 hover:text-white transition-colors text-sm font-medium"
+            >
+              <svg
+                className="w-4 h-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                />
+              </svg>
+              +34 661 959 962
+            </a>
+            <a
+              href="#formulario"
+              className="bg-[#22C55E] hover:bg-[#16a34a] text-white text-sm font-semibold px-4 py-2 rounded-lg transition-colors"
+            >
+              Empezar gratis
+            </a>
+          </div>
+        </div>
+      </nav>
+
+      {/* 3. HERO */}
       <section className="bg-[#0F0F0E] text-white pt-20 pb-24 px-4">
         <div className="max-w-4xl mx-auto text-center">
           {/* Logo */}
@@ -106,12 +149,17 @@ export default function Page() {
               Respuesta en 24h
             </span>
           </p>
+
+          {/* Cobertura geográfica */}
+          <p className="text-gray-500 text-xs mt-4">
+            📍 Servicio 100% online · Trabajamos en toda España
+          </p>
         </div>
 
         {/* Stats row */}
         <div className="max-w-3xl mx-auto mt-20 grid grid-cols-3 gap-4 border-t border-white/10 pt-10">
           {[
-            { number: "+200", label: "empresas constituidas" },
+            { number: "+50", label: "clientes satisfechos" },
             { number: "0€", label: "honorarios de constitución" },
             { number: "7-10", label: "días hasta tu SL lista" },
           ].map((stat) => (
@@ -125,7 +173,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* 3. ¿QUÉ INCLUYE? */}
+      {/* 4. ¿QUÉ INCLUYE? */}
       <section id="incluye" className="bg-gray-50 py-20 px-4">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-14">
@@ -187,7 +235,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* 4. COMPARATIVA DE PRECIO */}
+      {/* 5. COMPARATIVA DE PRECIO */}
       <section id="comparativa" className="bg-[#0F0F0E] py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-14">
@@ -320,7 +368,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* 5. PROCESO EN 4 PASOS */}
+      {/* 6. PROCESO EN 4 PASOS */}
       <section id="proceso" className="bg-gray-50 py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-14">
@@ -334,7 +382,6 @@ export default function Page() {
           </div>
 
           <div className="relative">
-            {/* Línea conectora desktop */}
             <div className="hidden md:block absolute top-8 left-[12.5%] right-[12.5%] h-0.5 bg-gray-200" />
 
             <div className="grid md:grid-cols-4 gap-8">
@@ -391,7 +438,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* 6. TESTIMONIOS */}
+      {/* 7. TESTIMONIOS */}
       <section id="testimonios" className="bg-[#0F0F0E] py-20 px-4">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-14">
@@ -417,7 +464,8 @@ export default function Page() {
             {[
               {
                 name: "Alma T.",
-                role: "Diseñadora freelance",
+                city: "Barcelona",
+                role: "Tienda online de ropa",
                 initials: "AT",
                 color: "bg-purple-500",
                 quote:
@@ -425,6 +473,7 @@ export default function Page() {
               },
               {
                 name: "José Ramón C.",
+                city: "Madrid",
                 role: "Consultor de RRHH",
                 initials: "JR",
                 color: "bg-blue-500",
@@ -433,7 +482,8 @@ export default function Page() {
               },
               {
                 name: "Paula R.",
-                role: "Terapeuta",
+                city: "Valencia",
+                role: "Terapeuta y coach",
                 initials: "PR",
                 color: "bg-rose-500",
                 quote:
@@ -461,14 +511,33 @@ export default function Page() {
                 </p>
                 <div className="flex items-center gap-3">
                   <div
-                    className={`w-10 h-10 rounded-full ${t.color} flex items-center justify-center text-white font-semibold text-sm`}
+                    className={`w-10 h-10 rounded-full ${t.color} flex items-center justify-center text-white font-semibold text-sm flex-shrink-0`}
                   >
                     {t.initials}
                   </div>
                   <div>
                     <p className="text-white font-semibold text-sm">{t.name}</p>
-                    <p className="text-gray-500 text-xs">{t.role}</p>
+                    <p className="text-gray-500 text-xs">
+                      {t.city} · {t.role}
+                    </p>
                   </div>
+                </div>
+                <div className="mt-3 flex items-center gap-1.5 border-t border-white/5 pt-3">
+                  <div className="flex gap-0.5">
+                    {[...Array(5)].map((_, i) => (
+                      <svg
+                        key={i}
+                        className="w-3 h-3 text-yellow-400"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                    ))}
+                  </div>
+                  <span className="text-xs text-gray-500">
+                    Verificado en Google
+                  </span>
                 </div>
               </div>
             ))}
@@ -476,7 +545,138 @@ export default function Page() {
         </div>
       </section>
 
-      {/* 7. FORMULARIO */}
+      {/* 8. FAQ */}
+      <FAQ />
+
+      {/* 9. TABLA DE PRECIOS POST-CONSTITUCIÓN */}
+      <section id="precios" className="bg-gray-50 py-20 px-4">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              ¿Cuánto cuesta la gestoría a partir del mes 3?
+            </h2>
+            <p className="text-gray-500">
+              Elige el plan que se adapta a tu situación.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6 items-start">
+            {/* Autónomo sin trabajadores */}
+            <div className="bg-white p-8 rounded-2xl border border-gray-200 shadow-sm">
+              <h3 className="text-lg font-bold text-gray-900 mb-2">
+                Autónomo sin trabajadores
+              </h3>
+              <div className="flex items-baseline gap-1 mb-6">
+                <span className="text-4xl font-extrabold text-gray-900">
+                  60€
+                </span>
+                <span className="text-gray-500 text-sm">/mes</span>
+              </div>
+              <ul className="space-y-3">
+                {[
+                  "IVA trimestral",
+                  "IRPF",
+                  "Renta anual",
+                  "Contabilidad mensual",
+                ].map((item) => (
+                  <li key={item} className="flex items-center gap-2 text-sm text-gray-600">
+                    <svg className="w-4 h-4 text-[#22C55E] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Autónomo con trabajadores — MÁS CONTRATADO */}
+            <div className="bg-[#0D2818] border-2 border-[#22C55E] p-8 rounded-2xl relative">
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#22C55E] text-black text-xs font-bold px-4 py-1.5 rounded-full whitespace-nowrap">
+                Más contratado
+              </div>
+              <h3 className="text-lg font-bold text-white mb-2">
+                Autónomo con trabajadores
+              </h3>
+              <div className="flex items-baseline gap-1 mb-6">
+                <span className="text-4xl font-extrabold text-white">90€</span>
+                <span className="text-gray-400 text-sm">/mes</span>
+              </div>
+              <ul className="space-y-3">
+                {[
+                  "Todo lo del plan anterior",
+                  "Nóminas",
+                  "Seguridad Social",
+                ].map((item) => (
+                  <li key={item} className="flex items-center gap-2 text-sm text-gray-300">
+                    <svg className="w-4 h-4 text-[#22C55E] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Sociedad Limitada */}
+            <div className="bg-white p-8 rounded-2xl border border-gray-200 shadow-sm">
+              <h3 className="text-lg font-bold text-gray-900 mb-2">
+                Sociedad Limitada
+              </h3>
+              <div className="flex items-baseline gap-1 mb-6">
+                <span className="text-4xl font-extrabold text-gray-900">
+                  120€
+                </span>
+                <span className="text-gray-500 text-sm">/mes</span>
+              </div>
+              <ul className="space-y-3">
+                {[
+                  "Contabilidad completa",
+                  "IVA",
+                  "Impuesto de Sociedades",
+                  "Nóminas",
+                ].map((item) => (
+                  <li key={item} className="flex items-center gap-2 text-sm text-gray-600">
+                    <svg className="w-4 h-4 text-[#22C55E] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <p className="text-center text-gray-400 text-sm mt-8">
+            Sin permanencia. Cancela cuando quieras. Precios sin IVA.
+          </p>
+        </div>
+      </section>
+
+      {/* 10. GARANTÍAS */}
+      <section className="bg-[#0A0A09] py-12 px-4 border-t border-white/5">
+        <div className="max-w-4xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {[
+              { icon: "🔒", text: "Datos protegidos RGPD" },
+              { icon: "✅", text: "Colaborador AEAT certificado" },
+              { icon: "⭐", text: "+50 clientes satisfechos" },
+              { icon: "📞", text: "Respuesta garantizada en 24h" },
+            ].map((badge) => (
+              <div
+                key={badge.text}
+                className="flex flex-col items-center text-center gap-2 py-4 px-3 rounded-xl bg-white/5 border border-white/5"
+              >
+                <span className="text-2xl">{badge.icon}</span>
+                <span className="text-gray-400 text-xs leading-snug">
+                  {badge.text}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 11. FORMULARIO */}
       <section
         id="formulario"
         className="bg-[#0A0A09] py-20 px-4 border-t border-[#22C55E]/20"
@@ -515,7 +715,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* 8. FOOTER */}
+      {/* 12. FOOTER */}
       <footer className="bg-[#080807] border-t border-white/5 py-10 px-4">
         <div className="max-w-5xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6 mb-8">
@@ -565,6 +765,9 @@ export default function Page() {
           </div>
         </div>
       </footer>
+
+      {/* BOTÓN WHATSAPP FLOTANTE */}
+      <WhatsAppButton />
     </main>
   );
 }

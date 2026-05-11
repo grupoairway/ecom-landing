@@ -13,3 +13,14 @@ body {
   background: #0f0f0e;
   color: #ffffff;
 }
+
+@keyframes slide-in-up {
+  from {
+    transform: translateY(80px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

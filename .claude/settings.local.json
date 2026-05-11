@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-ChildItem \"C:\\\\Users\\\\Avalon\\\\ecom-dashboard\\\\landing-constitucion\\\\node_modules\\\\next\\\\dist\\\\docs\\\\01-app\\\\\" -Recurse | Where-Object { $_.Name -match \"script|metadata|layout|breaking\" } | Select-Object FullName)",
+      "PowerShell(Get-ChildItem \"C:\\\\Users\\\\Avalon\\\\ecom-dashboard\\\\landing-constitucion\\\\node_modules\\\\next\\\\dist\\\\docs\\\\\" -Recurse | ForEach-Object { $_.FullName })"
+    ]
+  }
+}
