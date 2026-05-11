@@ -17,7 +17,7 @@ export default function UrgencyBar() {
             <span
               key={i}
               className={`inline-block w-2.5 h-2.5 rounded-full ${
-                i < 2 ? "bg-gray-600" : "bg-[#22C55E]"
+                i < 2 ? "bg-gray-600" : "bg-[#2563EB]"
               }`}
             />
           ))}

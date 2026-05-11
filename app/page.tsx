@@ -1,15 +1,11 @@
-import Image from "next/image";
 import UrgencyBar from "./components/UrgencyBar";
 import LeadForm from "./components/LeadForm";
 import FAQ from "./components/FAQ";
 import WhatsAppButton from "./components/WhatsAppButton";
 
-const LOGO_URL =
-  "https://ecomsolutions.es/wp-content/uploads/cropped-favicon-270x270.png";
-
 const checkIcon = (
   <svg
-    className="w-4 h-4 text-[#22C55E] flex-shrink-0"
+    className="w-4 h-4 text-[#2563EB] flex-shrink-0"
     fill="currentColor"
     viewBox="0 0 20 20"
   >
@@ -34,13 +30,9 @@ export default function Page() {
       <nav className="bg-[#0A0A09] border-b border-white/5 py-3 px-4">
         <div className="max-w-5xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-2.5">
-            <Image
-              src={LOGO_URL}
-              width={40}
-              height={40}
-              alt="Ecom Solutions"
-              className="rounded-lg"
-            />
+            <div className="w-8 h-8 bg-[#1E3A8A] rounded-lg flex items-center justify-center font-bold text-white text-xs">
+              ES
+            </div>
             <span className="text-white font-semibold text-sm">
               Ecom Solutions
             </span>
@@ -67,7 +59,7 @@ export default function Page() {
             </a>
             <a
               href="#formulario"
-              className="bg-[#1E40AF] hover:bg-[#1e3a8a] text-white text-sm font-semibold px-4 py-2 rounded-lg transition-colors"
+              className="bg-[#2563EB] hover:bg-[#1E40AF] text-white text-sm font-semibold px-4 py-2 rounded-lg transition-colors"
             >
               Empezar gratis
             </a>
@@ -80,7 +72,7 @@ export default function Page() {
         <div className="max-w-4xl mx-auto text-center">
           {/* Logo */}
           <div className="mb-10 flex items-center justify-center gap-3">
-            <div className="w-10 h-10 bg-[#22C55E] rounded-lg flex items-center justify-center font-bold text-black text-sm">
+            <div className="w-10 h-10 bg-[#1E3A8A] rounded-lg flex items-center justify-center font-bold text-white text-sm">
               ES
             </div>
             <span className="text-xl font-semibold tracking-wide text-gray-100">
@@ -89,15 +81,15 @@ export default function Page() {
           </div>
 
           {/* Badge superior */}
-          <div className="inline-flex items-center gap-2 bg-[#22C55E]/10 border border-[#22C55E]/30 rounded-full px-4 py-1.5 text-[#22C55E] text-sm font-medium mb-8">
-            <span className="w-2 h-2 rounded-full bg-[#22C55E] animate-pulse inline-block" />
+          <div className="inline-flex items-center gap-2 bg-[#2563EB]/10 border border-[#2563EB]/30 rounded-full px-4 py-1.5 text-[#2563EB] text-sm font-medium mb-8">
+            <span className="w-2 h-2 rounded-full bg-[#2563EB] animate-pulse inline-block" />
             Oferta limitada — Solo 5 plazas este mes
           </div>
 
           {/* Titular */}
           <h1 className="text-5xl md:text-7xl font-extrabold leading-tight mb-6">
             Constituye tu SL{" "}
-            <span className="text-[#22C55E]">completamente GRATIS</span>
+            <span className="text-[#2563EB]">completamente GRATIS</span>
           </h1>
 
           {/* Subtítulo */}
@@ -113,7 +105,7 @@ export default function Page() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
             <a
               href="#formulario"
-              className="bg-[#1E40AF] hover:bg-[#1e3a8a] text-white px-8 py-4 rounded-xl text-lg font-bold transition-colors shadow-lg shadow-blue-900/30"
+              className="bg-[#2563EB] hover:bg-[#1E40AF] text-white px-8 py-4 rounded-xl text-lg font-bold transition-colors shadow-lg shadow-blue-900/30"
             >
               Quiero mi SL gratis →
             </a>
@@ -129,24 +121,14 @@ export default function Page() {
 
           {/* Badge de confianza */}
           <p className="text-gray-400 text-sm flex items-center justify-center gap-4 flex-wrap">
-            <span className="flex items-center gap-1.5">
-              <svg className="w-4 h-4 text-[#22C55E]" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-              </svg>
-              Sin permanencia
-            </span>
-            <span className="flex items-center gap-1.5">
-              <svg className="w-4 h-4 text-[#22C55E]" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-              </svg>
-              Sin letra pequeña
-            </span>
-            <span className="flex items-center gap-1.5">
-              <svg className="w-4 h-4 text-[#22C55E]" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-              </svg>
-              Respuesta en 24h
-            </span>
+            {["Sin permanencia", "Sin letra pequeña", "Respuesta en 24h"].map((label) => (
+              <span key={label} className="flex items-center gap-1.5">
+                <svg className="w-4 h-4 text-[#2563EB]" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                </svg>
+                {label}
+              </span>
+            ))}
           </p>
 
           {/* Cobertura geográfica */}
@@ -163,7 +145,7 @@ export default function Page() {
             { number: "5-7", label: "días hábiles hasta tu SL" },
           ].map((stat) => (
             <div key={stat.label} className="text-center">
-              <p className="text-3xl font-extrabold text-[#22C55E]">
+              <p className="text-3xl font-extrabold text-[#2563EB]">
                 {stat.number}
               </p>
               <p className="text-gray-400 text-sm mt-1">{stat.label}</p>
@@ -214,7 +196,7 @@ export default function Page() {
                 <h3 className="text-xl font-bold text-gray-900 mb-2">
                   {card.title}
                 </h3>
-                <p className="text-[#22C55E] font-bold text-xl mb-3">
+                <p className="text-[#2563EB] font-bold text-xl mb-3">
                   {card.price}
                 </p>
                 <p className="text-gray-500 text-sm leading-relaxed">
@@ -227,8 +209,8 @@ export default function Page() {
           <div className="mt-10 text-center">
             <p className="text-gray-500 text-sm">
               A partir del mes 3: desde{" "}
-              <strong className="text-gray-900">60€/mes</strong> sin
-              permanencia. Cancela cuando quieras.
+              <strong className="text-gray-900">60€/mes (plan Starter)</strong>{" "}
+              sin permanencia. Cancela cuando quieras.
             </p>
           </div>
         </div>
@@ -267,7 +249,7 @@ export default function Page() {
             ].map((profile) => (
               <div
                 key={profile.title}
-                className="bg-[#1A1A18] border border-white/10 rounded-2xl p-8 text-center hover:border-[#22C55E]/30 transition-colors"
+                className="bg-[#1A1A18] border border-white/10 rounded-2xl p-8 text-center hover:border-[#2563EB]/30 transition-colors"
               >
                 <div className="text-5xl mb-5">{profile.icon}</div>
                 <h3 className="text-lg font-bold text-white mb-3">
@@ -283,7 +265,7 @@ export default function Page() {
           <div className="mt-10 text-center">
             <a
               href="#formulario"
-              className="inline-block bg-[#1E40AF] hover:bg-[#1e3a8a] text-white font-bold px-8 py-4 rounded-xl text-lg transition-colors"
+              className="inline-block bg-[#2563EB] hover:bg-[#1E40AF] text-white font-bold px-8 py-4 rounded-xl text-lg transition-colors"
             >
               Sí, quiero mi SL gratis →
             </a>
@@ -341,12 +323,12 @@ export default function Page() {
             </div>
 
             {/* Ecom Solutions */}
-            <div className="bg-[#0D2818] border border-[#22C55E]/40 rounded-2xl p-8 relative overflow-hidden">
-              <div className="absolute top-4 right-4 bg-[#22C55E] text-black text-xs font-bold px-3 py-1 rounded-full">
+            <div className="bg-[#0c1b3a] border border-[#2563EB]/40 rounded-2xl p-8 relative overflow-hidden">
+              <div className="absolute top-4 right-4 bg-[#2563EB] text-white text-xs font-bold px-3 py-1 rounded-full">
                 MEJOR OPCIÓN
               </div>
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-8 h-8 rounded-full bg-[#22C55E]/20 flex items-center justify-center text-[#22C55E] font-bold text-sm">
+                <div className="w-8 h-8 rounded-full bg-[#2563EB]/20 flex items-center justify-center text-[#2563EB] font-bold text-sm">
                   ✓
                 </div>
                 <h3 className="text-lg font-semibold text-white">
@@ -369,7 +351,7 @@ export default function Page() {
                 ].map((row) => (
                   <div
                     key={row.label}
-                    className="flex justify-between items-center py-3 border-b border-[#22C55E]/10 last:border-none"
+                    className="flex justify-between items-center py-3 border-b border-[#2563EB]/10 last:border-none"
                   >
                     <div>
                       <span className="text-gray-300 text-sm">{row.label}</span>
@@ -380,9 +362,9 @@ export default function Page() {
                     <span
                       className={`font-bold text-sm ${
                         row.total
-                          ? "text-[#22C55E] text-base"
+                          ? "text-[#2563EB] text-base"
                           : row.green
-                          ? "text-[#22C55E]"
+                          ? "text-[#2563EB]"
                           : "text-gray-200"
                       }`}
                     >
@@ -395,7 +377,7 @@ export default function Page() {
           </div>
 
           <div className="mt-10 text-center space-y-6">
-            <p className="text-[#22C55E] font-semibold text-lg">
+            <p className="text-[#2563EB] font-semibold text-lg">
               Ahorro estimado en el primer año:{" "}
               <span className="text-white font-extrabold text-2xl">
                 hasta 1.700€
@@ -403,7 +385,7 @@ export default function Page() {
             </p>
             <a
               href="#formulario"
-              className="inline-block bg-[#1E40AF] hover:bg-[#1e3a8a] text-white font-bold px-8 py-4 rounded-xl text-lg transition-colors"
+              className="inline-block bg-[#2563EB] hover:bg-[#1E40AF] text-white font-bold px-8 py-4 rounded-xl text-lg transition-colors"
             >
               Quiero ahorrarme hasta 1.700€ →
             </a>
@@ -455,10 +437,10 @@ export default function Page() {
                 },
               ].map((step) => (
                 <div key={step.num} className="text-center relative">
-                  <div className="w-16 h-16 bg-[#22C55E] rounded-full flex items-center justify-center mx-auto mb-4 text-white font-extrabold text-xl shadow-lg shadow-green-200/50 relative z-10">
+                  <div className="w-16 h-16 bg-[#2563EB] rounded-full flex items-center justify-center mx-auto mb-4 text-white font-extrabold text-xl shadow-lg shadow-blue-200/50 relative z-10">
                     {step.num}
                   </div>
-                  <div className="inline-block bg-[#22C55E]/10 text-[#16a34a] text-xs font-semibold px-2.5 py-1 rounded-full mb-3">
+                  <div className="inline-block bg-[#2563EB]/10 text-[#2563EB] text-xs font-semibold px-2.5 py-1 rounded-full mb-3">
                     {step.time}
                   </div>
                   <h3 className="font-bold text-gray-900 mb-2">{step.title}</h3>
@@ -473,7 +455,7 @@ export default function Page() {
           <div className="mt-12 text-center">
             <a
               href="#formulario"
-              className="inline-block bg-[#1E40AF] hover:bg-[#1e3a8a] text-white font-bold px-8 py-4 rounded-xl text-lg transition-colors"
+              className="inline-block bg-[#2563EB] hover:bg-[#1E40AF] text-white font-bold px-8 py-4 rounded-xl text-lg transition-colors"
             >
               Empezar ahora →
             </a>
@@ -576,37 +558,36 @@ export default function Page() {
       {/* 9. FAQ */}
       <FAQ />
 
-      {/* 10. TABLA DE PRECIOS POST-CONSTITUCIÓN */}
+      {/* 10. PLANES DE GESTORÍA */}
       <section id="precios" className="bg-gray-50 py-20 px-4">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              ¿Cuánto cuesta la gestoría a partir del mes 3?
+              Planes de gestoría a partir del mes 3
             </h2>
             <p className="text-gray-500">
-              Planes diseñados para Sociedades Limitadas. Sin permanencia.
+              Sin permanencia. Cambia o cancela cuando quieras.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6 items-start">
-            {/* SL Básica */}
+            {/* Starter */}
             <div className="bg-white p-8 rounded-2xl border border-gray-200 shadow-sm">
-              <h3 className="text-lg font-bold text-gray-900 mb-1">
-                SL Básica
-              </h3>
-              <p className="text-gray-500 text-xs mb-4">Para SL sin empleados</p>
-              <div className="flex items-baseline gap-1 mb-6">
-                <span className="text-4xl font-extrabold text-gray-900">
-                  60€
-                </span>
+              <h3 className="text-lg font-bold text-gray-900 mb-1">Starter</h3>
+              <p className="text-gray-500 text-xs mb-4">Hasta 20 facturas/mes</p>
+              <div className="flex items-baseline gap-1 mb-1">
+                <span className="text-4xl font-extrabold text-gray-900">60€</span>
                 <span className="text-gray-500 text-sm">/mes</span>
               </div>
+              <p className="text-gray-400 text-xs mb-6">+ IVA</p>
               <ul className="space-y-3">
                 {[
-                  "IVA trimestral (mod. 303)",
-                  "Retenciones (mod. 111, 115)",
-                  "Pagos fraccionados (mod. 202)",
                   "Contabilidad mensual",
+                  "IVA y retenciones",
+                  "Impuesto de Sociedades",
+                  "Cuentas Anuales",
+                  "Asesor personal",
+                  "Respuesta en 24h",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-2 text-sm text-gray-600">
                     {checkIcon}
@@ -616,25 +597,26 @@ export default function Page() {
               </ul>
             </div>
 
-            {/* SL Completa — MÁS CONTRATADO */}
-            <div className="bg-[#0D2818] border-2 border-[#22C55E] p-8 rounded-2xl relative">
-              <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#22C55E] text-black text-xs font-bold px-4 py-1.5 rounded-full whitespace-nowrap">
+            {/* Pro — MÁS CONTRATADO */}
+            <div className="bg-[#0c1b3a] border-2 border-[#2563EB] p-8 rounded-2xl relative">
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#2563EB] text-white text-xs font-bold px-4 py-1.5 rounded-full whitespace-nowrap">
                 Más contratado
               </div>
-              <h3 className="text-lg font-bold text-white mb-1">
-                SL Completa
-              </h3>
-              <p className="text-gray-400 text-xs mb-4">Incluye cierre fiscal anual</p>
-              <div className="flex items-baseline gap-1 mb-6">
-                <span className="text-4xl font-extrabold text-white">90€</span>
+              <h3 className="text-lg font-bold text-white mb-1">Pro</h3>
+              <p className="text-gray-400 text-xs mb-4">Hasta 200 facturas/mes</p>
+              <div className="flex items-baseline gap-1 mb-1">
+                <span className="text-4xl font-extrabold text-white">100€</span>
                 <span className="text-gray-400 text-sm">/mes</span>
               </div>
+              <p className="text-gray-500 text-xs mb-6">+ IVA</p>
               <ul className="space-y-3">
                 {[
-                  "Todo lo del plan anterior",
-                  "Impuesto de Sociedades (mod. 200)",
-                  "Cuentas anuales",
-                  "Legalización de libros",
+                  "Todo lo del plan Starter",
+                  "Hasta 200 facturas/mes",
+                  "Software facturación incluido",
+                  "Legalización de Libros",
+                  "Cambio de gestoría gratis",
+                  "Consultas ilimitadas",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-2 text-sm text-gray-300">
                     {checkIcon}
@@ -644,24 +626,23 @@ export default function Page() {
               </ul>
             </div>
 
-            {/* SL + Laboral */}
+            {/* Business */}
             <div className="bg-white p-8 rounded-2xl border border-gray-200 shadow-sm">
-              <h3 className="text-lg font-bold text-gray-900 mb-1">
-                SL + Laboral
-              </h3>
-              <p className="text-gray-500 text-xs mb-4">Para SL con empleados</p>
-              <div className="flex items-baseline gap-1 mb-6">
-                <span className="text-4xl font-extrabold text-gray-900">
-                  120€
-                </span>
+              <h3 className="text-lg font-bold text-gray-900 mb-1">Business</h3>
+              <p className="text-gray-500 text-xs mb-4">Facturas ilimitadas</p>
+              <div className="flex items-baseline gap-1 mb-1">
+                <span className="text-4xl font-extrabold text-gray-900">180€</span>
                 <span className="text-gray-500 text-sm">/mes</span>
               </div>
+              <p className="text-gray-400 text-xs mb-6">+ IVA</p>
               <ul className="space-y-3">
                 {[
-                  "Todo lo del plan anterior",
-                  "Nóminas",
-                  "Seguridad Social",
-                  "Altas y bajas de empleados",
+                  "Todo lo del plan Pro",
+                  "Facturas ilimitadas",
+                  "Gestoría laboral incluida",
+                  "Nóminas y Seguros Sociales",
+                  "Revisión fiscal trimestral",
+                  "Atención telefónica prioritaria",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-2 text-sm text-gray-600">
                     {checkIcon}
@@ -705,12 +686,12 @@ export default function Page() {
       {/* 12. FORMULARIO */}
       <section
         id="formulario"
-        className="bg-[#0A0A09] py-20 px-4 border-t border-[#22C55E]/20"
+        className="bg-[#0A0A09] py-20 px-4 border-t border-[#2563EB]/20"
       >
         <div className="max-w-xl mx-auto">
           <div className="text-center mb-10">
-            <div className="inline-flex items-center gap-2 bg-[#22C55E]/10 border border-[#22C55E]/30 rounded-full px-4 py-1.5 text-[#22C55E] text-sm font-medium mb-6">
-              <span className="w-2 h-2 rounded-full bg-[#22C55E] animate-pulse inline-block" />
+            <div className="inline-flex items-center gap-2 bg-[#2563EB]/10 border border-[#2563EB]/30 rounded-full px-4 py-1.5 text-[#2563EB] text-sm font-medium mb-6">
+              <span className="w-2 h-2 rounded-full bg-[#2563EB] animate-pulse inline-block" />
               Plazas limitadas
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
@@ -725,16 +706,10 @@ export default function Page() {
 
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-6 text-sm text-gray-500">
             <span>🔒 Datos protegidos (RGPD)</span>
-            <a
-              href="tel:+34661959962"
-              className="hover:text-gray-300 transition-colors"
-            >
+            <a href="tel:+34661959962" className="hover:text-gray-300 transition-colors">
               📞 +34 661 959 962
             </a>
-            <a
-              href="mailto:info@ecomsolutions.es"
-              className="hover:text-gray-300 transition-colors"
-            >
+            <a href="mailto:info@ecomsolutions.es" className="hover:text-gray-300 transition-colors">
               ✉️ info@ecomsolutions.es
             </a>
           </div>
@@ -746,7 +721,7 @@ export default function Page() {
         <div className="max-w-5xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6 mb-8">
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 bg-[#22C55E] rounded-lg flex items-center justify-center font-bold text-black text-xs">
+              <div className="w-9 h-9 bg-[#1E3A8A] rounded-lg flex items-center justify-center font-bold text-white text-xs">
                 ES
               </div>
               <span className="text-white font-semibold">Ecom Solutions</span>
@@ -785,7 +760,7 @@ export default function Page() {
         </div>
       </footer>
 
-      {/* BOTÓN WHATSAPP FLOTANTE */}
+      {/* BOTÓN WHATSAPP FLOTANTE — mantiene verde #25D366 */}
       <WhatsAppButton />
     </main>
   );

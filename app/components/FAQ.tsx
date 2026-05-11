@@ -56,7 +56,7 @@ export default function FAQ() {
               >
                 <span className="pr-4">{faq.q}</span>
                 <svg
-                  className={`w-5 h-5 text-[#22C55E] flex-shrink-0 transition-transform duration-300 ${
+                  className={`w-5 h-5 text-[#2563EB] flex-shrink-0 transition-transform duration-300 ${
                     open === i ? "rotate-180" : ""
                   }`}
                   fill="none"

@@ -56,8 +56,8 @@ export default function LeadForm() {
         <p className="text-gray-300 text-lg mb-6">
           Te llamamos en menos de 24h para guiarte en todo el proceso.
         </p>
-        <div className="bg-[#1A1A18] border border-[#22C55E]/30 rounded-2xl p-6 text-left">
-          <p className="text-[#22C55E] font-semibold mb-2">
+        <div className="bg-[#1A1A18] border border-[#2563EB]/30 rounded-2xl p-6 text-left">
+          <p className="text-[#2563EB] font-semibold mb-2">
             ¿Quieres agilizarlo?
           </p>
           <p className="text-gray-300 text-sm">
@@ -77,7 +77,7 @@ export default function LeadForm() {
   }
 
   const inputClass =
-    "w-full bg-[#1A1A18] border border-white/10 text-white rounded-xl px-4 py-3.5 text-sm placeholder-gray-500 focus:outline-none focus:border-[#22C55E] focus:ring-1 focus:ring-[#22C55E] transition-colors";
+    "w-full bg-[#1A1A18] border border-white/10 text-white rounded-xl px-4 py-3.5 text-sm placeholder-gray-500 focus:outline-none focus:border-[#2563EB] focus:ring-1 focus:ring-[#2563EB] transition-colors";
 
   const labelClass = "block text-sm font-medium text-gray-300 mb-1.5";
 
@@ -177,7 +177,7 @@ export default function LeadForm() {
       <button
         type="submit"
         disabled={state === "loading"}
-        className="w-full bg-[#22C55E] hover:bg-[#16a34a] disabled:bg-[#22C55E]/50 text-white font-bold text-lg py-4 rounded-xl transition-colors cursor-pointer disabled:cursor-not-allowed"
+        className="w-full bg-[#2563EB] hover:bg-[#1E40AF] disabled:bg-[#2563EB]/50 text-white font-bold text-lg py-4 rounded-xl transition-colors cursor-pointer disabled:cursor-not-allowed"
       >
         {state === "loading" ? (
           <span className="inline-flex items-center gap-2 justify-center">
