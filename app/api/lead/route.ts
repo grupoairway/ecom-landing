@@ -48,7 +48,7 @@ async function createNotionLead(data: LeadData) {
       parent: { database_id: dbId },
       properties: {
         Nombre: { title: [{ text: { content: data.nombre } }] },
-        Estado: { select: { name: "Onboarding" } },
+        Estado: { select: { name: "Lead" } },
         Email: { rich_text: [{ text: { content: data.email } }] },
       },
       children: [
