@@ -12,6 +12,10 @@ export const metadata: Metadata = {
   title: "Constituye tu SL GRATIS | Ecom Solutions",
   description:
     "Constituye tu Sociedad Limitada completamente gratis. Solo pagas notaría y registro (~350€). Honorarios 0€ + 2 meses de gestoría incluidos.",
+  icons: {
+    icon: "https://ecomsolutions.es/wp-content/uploads/cropped-favicon-270x270.png",
+    apple: "https://ecomsolutions.es/wp-content/uploads/cropped-favicon-270x270.png",
+  },
   openGraph: {
     title: "Constituye tu SL GRATIS | Ecom Solutions",
     description:
