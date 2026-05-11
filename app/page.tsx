@@ -1,3 +1,4 @@
+import Image from "next/image";
 import UrgencyBar from "./components/UrgencyBar";
 import LeadForm from "./components/LeadForm";
 import FAQ from "./components/FAQ";
@@ -30,11 +31,15 @@ export default function Page() {
       <nav className="bg-[#0A0A09] border-b border-white/5 py-3 px-4">
         <div className="max-w-5xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-2.5">
-            <div className="w-8 h-8 bg-[#1E3A8A] rounded-lg flex items-center justify-center font-bold text-white text-xs">
-              ES
-            </div>
-            <span className="text-white font-semibold text-sm">
-              Ecom Solutions
+            <Image
+              src="/Logo Ecomsolutions 2.png"
+              width={40}
+              height={40}
+              alt="EcomSolutions"
+              className="rounded-lg"
+            />
+            <span className="text-white text-sm" style={{ fontWeight: 600 }}>
+              EcomSolutions
             </span>
           </div>
           <div className="flex items-center gap-4">
@@ -72,11 +77,15 @@ export default function Page() {
         <div className="max-w-4xl mx-auto text-center">
           {/* Logo */}
           <div className="mb-10 flex items-center justify-center gap-3">
-            <div className="w-10 h-10 bg-[#1E3A8A] rounded-lg flex items-center justify-center font-bold text-white text-sm">
-              ES
-            </div>
-            <span className="text-xl font-semibold tracking-wide text-gray-100">
-              Ecom Solutions
+            <Image
+              src="/Logo Ecomsolutions 2.png"
+              width={40}
+              height={40}
+              alt="EcomSolutions"
+              className="rounded-lg"
+            />
+            <span className="text-xl tracking-wide text-gray-100" style={{ fontWeight: 600 }}>
+              EcomSolutions
             </span>
           </div>
 
@@ -721,10 +730,14 @@ export default function Page() {
         <div className="max-w-5xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6 mb-8">
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 bg-[#1E3A8A] rounded-lg flex items-center justify-center font-bold text-white text-xs">
-                ES
-              </div>
-              <span className="text-white font-semibold">Ecom Solutions</span>
+              <Image
+                src="/Logo Ecomsolutions 2.png"
+                width={40}
+                height={40}
+                alt="EcomSolutions"
+                className="rounded-lg"
+              />
+              <span className="text-white" style={{ fontWeight: 600 }}>EcomSolutions</span>
             </div>
 
             <div className="flex flex-col sm:flex-row items-center gap-4 text-sm text-gray-400">
