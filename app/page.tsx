@@ -103,9 +103,9 @@ export default function Page() {
           {/* Subtítulo */}
           <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed">
             Solo pagas{" "}
-            <strong className="text-white">300€ + IVA</strong>{" "}
-            (notaría, Registro Mercantil y CIF incluidos). Nosotros ponemos los
-            honorarios y{" "}
+            <strong className="text-white">~150€ de notaría y registro</strong>.
+            Honorarios de constitución:{" "}
+            <strong className="text-white">0€</strong>. Incluye{" "}
             <strong className="text-white">2 meses de gestoría gratis</strong>.
           </p>
 
@@ -355,18 +355,14 @@ export default function Page() {
               </div>
               <div className="space-y-4">
                 {[
-                  {
-                    label: "Notaría + registro",
-                    value: "300€ + IVA",
-                    sub: "(nuestros honorarios: 0€)",
-                    green: false,
-                  },
+                  { label: "Honorarios constitución", value: "0€", green: true },
+                  { label: "Notaría + registro", value: "~150€", green: false },
                   { label: "2 meses gestoría", value: "GRATIS", green: true },
                   { label: "Permanencia", value: "Sin compromiso", green: false },
                   {
                     label: "Total 1er año",
-                    value: "~960€",
-                    sub: "(notaría + gestoría mes 3-12)",
+                    value: "~750€",
+                    sub: "(notaría 150€ + gestoría mes 3-12)",
                     total: true,
                     green: false,
                   },
@@ -402,14 +398,14 @@ export default function Page() {
             <p className="text-[#22C55E] font-semibold text-lg">
               Ahorro estimado en el primer año:{" "}
               <span className="text-white font-extrabold text-2xl">
-                hasta 1.500€
+                hasta 1.700€
               </span>
             </p>
             <a
               href="#formulario"
               className="inline-block bg-[#1E40AF] hover:bg-[#1e3a8a] text-white font-bold px-8 py-4 rounded-xl text-lg transition-colors"
             >
-              Quiero ahorrarme hasta 1.500€ →
+              Quiero ahorrarme hasta 1.700€ →
             </a>
           </div>
         </div>
@@ -781,7 +777,7 @@ export default function Page() {
             </p>
             <p className="mt-2 max-w-2xl mx-auto">
               La oferta de honorarios 0€ aplica a la constitución estándar de
-              una SL. Los gastos de notaría y Registro Mercantil (300€ + IVA)
+              una SL. Los gastos de notaría y Registro Mercantil (aprox. 150€)
               corren a cargo del cliente. Los 2 meses de gestoría gratuita se
               aplican desde la constitución. Sin permanencia a partir del mes 3.
             </p>

@@ -25,7 +25,7 @@ const faqs = [
   },
   {
     q: "¿Cuánto cuesta exactamente la notaría y el registro?",
-    a: "El precio total es 300€ + IVA, que incluye notaría, Registro Mercantil y CIF. No hay costes ocultos ni sorpresas.",
+    a: "Los gastos de notaría y registro son aproximadamente 150€. Los honorarios de constitución son completamente gratuitos.",
   },
 ];
 
