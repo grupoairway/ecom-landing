@@ -37,6 +37,26 @@ async function createNotionLead(data: LeadData) {
   const token = process.env.NOTION_TOKEN;
   const dbId = process.env.NOTION_LEADS_DB;
 
+  console.log("[Notion] NOTION_LEADS_DB:", dbId ?? "❌ undefined");
+  console.log("[Notion] NOTION_TOKEN present:", !!token);
+
+  const payload = {
+    parent: { database_id: dbId },
+    properties: {
+      Nombre: { title: [{ text: { content: data.nombre } }] },
+      Email: { email: data.email },
+      Teléfono: { phone_number: data.telefono },
+      Actividad: { rich_text: [{ text: { content: data.actividad } }] },
+      "Cuándo constituir": { select: { name: data.cuando } },
+      Estado: { select: { name: "Nuevo" } },
+      Origen: { select: { name: "Web constitución" } },
+      "Servicio interesado": { select: { name: "Constitución SL" } },
+      "Fecha entrada": { date: { start: new Date().toISOString().split("T")[0] } },
+    },
+  };
+
+  console.log("[Notion] Payload:", JSON.stringify(payload, null, 2));
+
   const res = await fetch("https://api.notion.com/v1/pages", {
     method: "POST",
     headers: {
@@ -44,28 +64,18 @@ async function createNotionLead(data: LeadData) {
       "Content-Type": "application/json",
       "Notion-Version": "2022-06-28",
     },
-    body: JSON.stringify({
-      parent: { database_id: dbId },
-      properties: {
-        Nombre: { title: [{ text: { content: data.nombre } }] },
-        Email: { email: data.email },
-        Teléfono: { phone_number: data.telefono },
-        Actividad: { rich_text: [{ text: { content: data.actividad } }] },
-        "Cuándo constituir": { select: { name: data.cuando } },
-        Estado: { select: { name: "Nuevo" } },
-        Origen: { select: { name: "Web constitución" } },
-        "Servicio interesado": { select: { name: "Constitución SL" } },
-        "Fecha entrada": { date: { start: new Date().toISOString().split("T")[0] } },
-      },
-    }),
+    body: JSON.stringify(payload),
   });
 
+  const responseText = await res.text();
+  console.log("[Notion] Status:", res.status);
+  console.log("[Notion] Response:", responseText);
+
   if (!res.ok) {
-    const text = await res.text();
-    throw new Error(`Notion API ${res.status}: ${text}`);
+    throw new Error(`Notion API ${res.status}: ${responseText}`);
   }
 
-  return res.json();
+  return JSON.parse(responseText);
 }
 
 async function sendWhatsAppNotification(data: LeadData) {
