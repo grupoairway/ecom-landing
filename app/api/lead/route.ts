@@ -35,7 +35,7 @@ export async function POST(request: NextRequest) {
 
 async function createNotionLead(data: LeadData) {
   const token = process.env.NOTION_TOKEN;
-  const dbId = process.env.NOTION_CLIENTES_DB;
+  const dbId = process.env.NOTION_LEADS_DB;
 
   const res = await fetch("https://api.notion.com/v1/pages", {
     method: "POST",
@@ -48,38 +48,15 @@ async function createNotionLead(data: LeadData) {
       parent: { database_id: dbId },
       properties: {
         Nombre: { title: [{ text: { content: data.nombre } }] },
-        Estado: { select: { name: "Lead" } },
-        Email: { rich_text: [{ text: { content: data.email } }] },
+        Email: { email: data.email },
+        Teléfono: { phone_number: data.telefono },
+        Actividad: { rich_text: [{ text: { content: data.actividad } }] },
+        "Cuándo constituir": { select: { name: data.cuando } },
+        Estado: { select: { name: "Nuevo" } },
+        Origen: { select: { name: "Web constitución" } },
+        "Servicio interesado": { select: { name: "Constitución SL" } },
+        "Fecha entrada": { date: { start: new Date().toISOString().split("T")[0] } },
       },
-      children: [
-        {
-          object: "block",
-          type: "callout",
-          callout: {
-            icon: { emoji: "📋" },
-            rich_text: [
-              {
-                text: {
-                  content: "Lead desde landing page — Constitución SL GRATIS",
-                },
-              },
-            ],
-          },
-        },
-        {
-          object: "block",
-          type: "paragraph",
-          paragraph: {
-            rich_text: [
-              {
-                text: {
-                  content: `📞 Teléfono: ${data.telefono}\n🏢 Actividad: ${data.actividad}\n📅 Cuándo constituir: ${data.cuando}`,
-                },
-              },
-            ],
-          },
-        },
-      ],
     }),
   });
 
