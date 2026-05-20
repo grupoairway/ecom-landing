@@ -765,6 +765,13 @@ export default function Page() {
               © {new Date().getFullYear()} Ecom Solutions · Todos los derechos
               reservados
             </p>
+            <div className="flex justify-center items-center gap-3 mt-2 flex-wrap">
+              <a href="https://ecomsolutions.es/politica-de-privacidad/" className="text-gray-500 hover:text-gray-300 transition-colors">Política de privacidad</a>
+              <span className="text-gray-700">·</span>
+              <a href="https://ecomsolutions.es/aviso-legal/" className="text-gray-500 hover:text-gray-300 transition-colors">Aviso legal</a>
+              <span className="text-gray-700">·</span>
+              <a href="https://ecomsolutions.es/politica-de-cookies/" className="text-gray-500 hover:text-gray-300 transition-colors">Política de cookies</a>
+            </div>
             <p className="mt-2 max-w-2xl mx-auto">
               La oferta de honorarios 0€ aplica a la constitución estándar de
               una SL. Los gastos de notaría y Registro Mercantil (aprox. 150€)
