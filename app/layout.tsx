@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import Script from "next/script";
 import "./globals.css";
 
 const inter = Inter({
@@ -34,8 +33,10 @@ export const metadata: Metadata = {
   },
 };
 
-// Replace G-XXXXXXXXXX with your actual Google Analytics measurement ID
-const GA_MEASUREMENT_ID = "G-ET7W60CCWV";
+// Google Analytics, quitado el 07/10/2026 (del usuario): cargaba al hidratar la página, sin banner ni modo de
+// consentimiento, y ponía `_ga` y `_ga_<id>` (2 años) a cada visitante. Hoy no hay campañas, así que no aportaba nada y
+// costaba un incumplimiento que cualquiera puede comprobar desde fuera. Vuelve con su banner de consentimiento el día que
+// empiecen los anuncios; tests/sin-rastreadores.test.mjs no deja que vuelva sin él.
 
 export default function RootLayout({
   children,
@@ -46,18 +47,6 @@ export default function RootLayout({
     <html lang="es" className={inter.variable}>
       <body>
         {children}
-        <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${GA_MEASUREMENT_ID}');
-          `}
-        </Script>
       </body>
     </html>
   );
